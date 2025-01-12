@@ -12,10 +12,16 @@
     <div class="mb-3">
         <label for="username" class="form-label">Username</label>
         <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+        @if ($errors->has('username'))
+        <p style="color: red;">{{ $errors->first('username') }}</p>
+        @endif
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        @if ($errors->has('email'))
+        <p style="color: red;">{{ $errors->first('email') }}</p>
+        @endif
     </div>
     <div class="mb-3">
         <label for="password" class="form-label">Password</label>
@@ -30,7 +36,4 @@
     </div>
 </form>
 
-@if ($errors->any())
-    <p>{{ $errors->first() }}</p>
-@endif
 @endsection

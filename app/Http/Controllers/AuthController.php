@@ -42,7 +42,8 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
-            'username' => ['required', 'min:3', 'max:20', new Username],
+            'username' => 'required|unique:users',
+            // 'username' => ['required', 'min:3', 'max:20', new Username],
             'password' => 'required|min:6|confirmed',
         ]);
 
@@ -53,8 +54,6 @@ class AuthController extends Controller
             'role' => 2 ,
             'password' => Hash::make($request->password),
         ]);
-
-        dd($user);
 
         Auth::login($user);
 
