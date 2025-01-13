@@ -12,7 +12,16 @@
                 <div class="card-body">
                     <h5 class="card-title">Profile</h5>
                     <p class="card-text">Manage your profile information here.</p>
-                    <a href="#" class="btn btn-primary">Go to Profile</a>
+                    <a href="{{ route('editprofile') }}" class="btn btn-primary">Go to Profile</a>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Notifications</h5>
+                    <p class="card-text">Check your latest notifications here.</p>
+                    <a href="#" class="btn btn-primary">View Notifications</a>
                 </div>
             </div>
         </div>
@@ -22,15 +31,6 @@
                     <h5 class="card-title">Settings</h5>
                     <p class="card-text">Update your settings and preferences here.</p>
                     <a href="#" class="btn btn-primary">Go to Settings</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Notifications</h5>
-                    <p class="card-text">Check your latest notifications here.</p>
-                    <a href="#" class="btn btn-primary">View Notifications</a>
                 </div>
             </div>
         </div>

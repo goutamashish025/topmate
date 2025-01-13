@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
@@ -21,3 +22,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth');
 
+// Route::get('/editprofile', function(){
+//     return view('profile.editprofile');
+// })->middleware('auth');
+
+Route::get('/editprofile', [AboutController::class,'showeditprofile'])->name('editprofile')->middleware('auth');
+Route::post('/updateprofile',[AboutController::class,'updateprofile'])->name('updateprofile')->middleware('auth');
