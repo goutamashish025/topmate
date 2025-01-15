@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\About;
+use App\models\service;
 use Illuminate\Support\Facades\Storage;
 
 ini_set('memory_limit', '512M');
@@ -33,6 +34,11 @@ class AboutController extends Controller
 
         $about_id = About::firstOrCreate(['user_id' => $user->id]);
 
+        $services = Service::where(['user_id' => $user->id])->get();
+        dd($services);
+        die();
+        
+
         if($request->hasFile('profile_picture')){
             if($about_id->profile_picture){
                 Storage::delete($about_id->profile_picture);
@@ -49,7 +55,7 @@ class AboutController extends Controller
 
         $about_id->save();
 
-        return view('profile.editprofile', compact('about_id'));
+        return view('profile.editprofile', compact('about_id','services'));
 
 
     }

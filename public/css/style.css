@@ -1,0 +1,24 @@
+.social-icons {
+    display: flex; /* Align items side by side */
+    gap: 15px; /* Space between icons */
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li a {
+    text-decoration: none; /* Remove underline */
+    font-size: 24px; /* Icon size */
+    color: #333; /* Default color */
+    transition: color 0.3s ease;
+}
+
+.social-icons li a:hover {
+    color: #0073b1; /* Default hover color */
+}
+
+/* Optional: Specific hover colors for each platform */
+.social-icons li a.linkedin:hover { color: #0073b1; } /* LinkedIn blue */
+.social-icons li a.instagram:hover { color: #E1306C; } /* Instagram pink */
+.social-icons li a.x:hover { color: #1DA1F2; } /* X blue */
+.social-icons li a.portfolio:hover { color: #333; } /* Portfolio default */
