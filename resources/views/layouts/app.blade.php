@@ -1,6 +1,6 @@
 @include('includes.header')
 
-<div class="container mt-5">
+<div class="container-fluid">
     @yield('content')
 </div>
 

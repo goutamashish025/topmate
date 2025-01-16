@@ -23,6 +23,9 @@
                 <ul class="navbar-nav ml-auto">
                     @auth
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
@@ -44,7 +47,7 @@
         </div>
     </nav>
     <!-- Main Content -->
-    <div class="container mt-5">
+    <div class="container-fluid">
         @yield('content')
     </div>
 

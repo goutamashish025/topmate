@@ -9,7 +9,15 @@ use Illuminate\Http\Request;
 class ServiceController extends Controller
 {
     public function getservices(){
-        return view('profile.services');
+        $user = Auth::user();
+        if(!$user){
+            return redirect('login')->withErrors('You must login to your account to view your services.');
+        }
+
+        $services = Service::where('user_id', $user->id)->get();
+        
+
+        return view('profile.services',compact('services'));
     }
 
     public function addservices(Request $request)

@@ -17,12 +17,9 @@ class ProfileController extends Controller
 
 
         // If the user is not found, return a 404 or redirect
-        if (!$user) {
-            return abort(404, 'User not found');
-        }
-        $about = About::where('user_id', $user->id)->first();
+        $about = About::where('user_id', $id)->first();
 
-        $user = Auth::user();
+       
 
         if(!$user){
             return redirect()->route('login')->withErrors('You must login to update the profile');

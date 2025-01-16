@@ -13,7 +13,15 @@ ini_set('max_execution_time', 300); // 5 minutes
 class AboutController extends Controller
 {
     public function showeditprofile(){
-        return view('profile.editprofile');
+
+        $user = Auth::user();
+
+        if(!$user){
+            return redirect()->route('login')->withErrors('You must login to update the profile');
+        }
+
+        $about_id = About::firstOrCreate(['user_id' => $user->id]);
+        return view('profile.editprofile' ,compact('about_id'));
     }
 
     public function updateprofile(Request $request){
@@ -35,9 +43,6 @@ class AboutController extends Controller
         $about_id = About::firstOrCreate(['user_id' => $user->id]);
 
         $services = Service::where(['user_id' => $user->id])->get();
-        dd($services);
-        die();
-        
 
         if($request->hasFile('profile_picture')){
             if($about_id->profile_picture){

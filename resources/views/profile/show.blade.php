@@ -72,6 +72,12 @@
             @endforeach
             @endif
         </div>
+        <div class="container">
+            @if(!empty($about))
+            <h1>About me</h1>
+            <p>{{$about->about}}</p>
+            @endif
+        </div>
             
         </div>
     </div>

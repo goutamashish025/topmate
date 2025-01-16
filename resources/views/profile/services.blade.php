@@ -2,7 +2,47 @@
 @section('title', 'Edit Services')
 
 @section('content')
-<form method="POST" action="{{ route('addservices') }}">
+<br><br><br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Your Services</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">S.no</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Time</th>
+                <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!empty($services))
+                @foreach ($services as $service)                            
+                <tr>
+                <th scope="row">1</th>
+                <td>{{ $service->name }}</td>
+                <td>{{ $service->description }}</td>
+                <td>${{ $service->price }}</td>
+                <td>{{ $service->time }} minutes</td>
+                <td>
+                <a href="#">
+                <button type="button" class="btn btn-primary">Edit</button>
+                </a>
+                <a href="#">
+                <button type="button" class="btn btn-danger">Delete</button></td>
+                </a>
+                </tr>
+                @endforeach   
+                @endif
+            </tbody>
+            </table>
+
+        </div>
+        <div class="col-md-4">
+        <form method="POST" action="{{ route('addservices') }}">
     @csrf
     <div class="mb-3">
         <label for="name" class="form-label">Add your Service</label>
@@ -48,6 +88,12 @@
         @enderror
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+        </div>
+    </div>
+
+</div>
+
 
 
 

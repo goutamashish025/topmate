@@ -21,7 +21,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware('auth');
+})->name('dashboard')->middleware('auth');
 
 // Route::get('/editprofile', function(){
 //     return view('profile.editprofile');
