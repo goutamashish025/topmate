@@ -22,3 +22,44 @@
 .social-icons li a.instagram:hover { color: #E1306C; } /* Instagram pink */
 .social-icons li a.x:hover { color: #1DA1F2; } /* X blue */
 .social-icons li a.portfolio:hover { color: #333; } /* Portfolio default */
+
+
+.custom-scroll {
+    overflow-x: auto;
+    white-space: nowrap; /* Keeps content in one line for horizontal scrolling */
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  .custom-scroll::-webkit-scrollbar {
+    height: 8px; /* Height of the scrollbar */
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar color */
+    border-radius: 4px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Hover color */
+  }
+
+
+
+/* book now css */
+.date-card, .time-slot {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.date-card:hover, .time-slot:hover, .date-card.active, .time-slot.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.time-slot {
+    margin-bottom: 10px;
+}

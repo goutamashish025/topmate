@@ -32,3 +32,12 @@ Route::post('/updateprofile',[AboutController::class,'updateprofile'])->name('up
 
 Route::get('/services' ,[ServiceController::class,'getservices'])->name('services')->middleware('auth');
 Route::post('addservices',[ServiceController::class,'addservices'])->name('addservices')->middleware('auth');
+
+Route::get('/delete/service/{id}',[ServiceController::class,'deleteservice'])->name('deleteservice')->middleware('auth');
+Route::get('book-now/{user_id}/{id}',[ServiceController::class,'booknow'])->name('book-now');
+Route::post('book-now/',[ServiceController::class,'booknowservice'])->name('booknowservice');
+
+Route::post('/handle-payment', [ServiceController::class, 'handlePayment'])->name('handle.payment');
+
+Route::get('/success-page',[ServiceController::class,'successpage'])->name('successpage');
+Route::get('/failure-page',[ServiceController::class,'failurepage'])->name('failurepage');

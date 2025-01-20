@@ -57,7 +57,7 @@
         @if ($services->isNotEmpty())
             @foreach($services as $service)
             <div class="col-sm-6 mb-3 mb-sm-0">
-                <a href="#" class="card-link" style="text-decoration: none; color: inherit;">
+                <a href="{{ route('book-now',['user_id'=>$user->id,'id' => $service->id ])}}" class="card-link" style="text-decoration: none; color: inherit;">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $service->name }}</h5>
