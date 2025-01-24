@@ -19,9 +19,9 @@
          <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Notifications</h5>
+                    <h5 class="card-title">Bookings</h5>
                     <p class="card-text">Check your latest notifications here.</p>
-                    <a href="#" class="btn btn-primary">View Notifications</a>
+                    <a href="{{ route('showmybookings') }}" class="btn btn-primary">Show Bookings</a>
                 </div>
             </div>
         </div>

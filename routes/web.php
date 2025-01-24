@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AppointmentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,6 +27,8 @@ Route::get('/dashboard', function () {
 // Route::get('/editprofile', function(){
 //     return view('profile.editprofile');
 // })->middleware('auth');
+
+Route::get('/my-bookings',[AppointmentController::class,'showmybookings'])->name('showmybookings')->middleware('auth');
 
 Route::get('/editprofile', [AboutController::class,'showeditprofile'])->name('editprofile')->middleware('auth');
 Route::post('/updateprofile',[AboutController::class,'updateprofile'])->name('updateprofile')->middleware('auth');
